@@ -1,0 +1,10 @@
+
+label{
+cursor: pointer;
+}
+
+::-webkit-file-upload-button{ cursor: pointer;}
+
+.ll:hover{
+  background-color: gainsboro;
+}

@@ -1,25 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Base from './Basepage/Base';
+import Mainpage from './mapdashboard/Mainpage';
+import UserPageSingup from './singupuser/UserPageSingup';
+import EntrepriseProfile from './profileEntreprise/EntrepriseProfile';
+import Main from './dashboard_responsable/Main';
+import Login from './Login/Login';
+import ChatMain from './chatapp/ChatMain';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return  <Routes>
+  <Route path="/chatapp" element={ <ChatMain/> } />
+  <Route path="/singup" element={ <Base/> } />
+  <Route path="/dashboard/:id" element={ <Mainpage/> } />
+  <Route path="/usersingup" element={ <UserPageSingup/> } />
+  <Route path="/entreprisedetaille" element={ <EntrepriseProfile/> } />
+  <Route path="/mainresponsable/:id" element={ <Main/> } />
+  <Route path="/login" element={ <Login /> } />
+</Routes>
+    
 }
 
 export default App;
